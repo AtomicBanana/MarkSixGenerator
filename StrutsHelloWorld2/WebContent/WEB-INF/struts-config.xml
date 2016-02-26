@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+    <form-beans>
+    	<form-bean name="nameForm" type="example.NameForm"/>
+    	<form-bean name="registerForm" type="example.RegisterForm"/>
+    	<form-bean name="luckyDrawForm" type="example.LuckyDrawForm"/>
+    </form-beans>
+
+    <action-mappings>
+        <action path="/Name" type="example.NameAction" name="nameForm" input="/WEB-INF/jsp/index.jsp">
+	 		<forward name="success" path="/WEB-INF/jsp/displayname.jsp"/>
+			<forward name="failure" path="/WEB-INF/jsp/index.jsp"/>
+		</action>
+		<action path="/Register" type="example.RegisterAction" name="registerForm" input="/WEB-INF/jsp/registerForm.jsp">
+	 		<forward name="success" path="/WEB-INF/jsp/registerSuccess.jsp"/>
+			<forward name="failure" path="/WEB-INF/jsp/registerForm.jsp"/>
+		</action>
+		<action path="/LuckyDraw" type="example.LuckyDrawAction" name="luckyDrawForm" input="/WEB-INF/jsp/luckyDraw.jsp">
+	 		<forward name="success" path="/WEB-INF/jsp/luckyDrawSuccess.jsp"/>
+			<forward name="failure" path="/WEB-INF/jsp/luckyDraw.jsp"/>
+		</action>
+    </action-mappings>
+    
+</struts-config>
