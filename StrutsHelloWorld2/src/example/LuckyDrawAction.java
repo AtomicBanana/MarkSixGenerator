@@ -21,7 +21,7 @@ public class LuckyDrawAction extends Action {
 	private int[] drawResult = new int[6];
 	private int[] numbers_array = new int[6];
 	private int matched_count = 0;
-	private int records = 5000;
+	private int records = 100;
 	
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
  			HttpServletRequest request, HttpServletResponse response)
